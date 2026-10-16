@@ -1,0 +1,18 @@
+name: Validate skills
+
+on:
+  push:
+    branches: ["main", "import-matt-skills-v1"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  structural-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate skill structure
+        shell: pwsh
+        run: ./validation/validate-skills.ps1
