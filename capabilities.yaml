@@ -1,0 +1,11 @@
+version: "1.0"
+defaults:
+  mode: read-only
+  external_writes_require_user_approval: true
+capabilities:
+  github_read: available
+  github_issue_write: approval_required
+  github_branch_write: approval_required
+  github_pull_request_write: approval_required
+  background_agent: runtime_dependent
+  local_session_logs: access_dependent
