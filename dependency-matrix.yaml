@@ -1,5 +1,20 @@
 version: "1.0"
 edges:
+  - from: workflow-manager
+    to: unlazy
+    status: RESOLVED
+  - from: workflow-manager
+    to: grilling
+    status: RESOLVED
+  - from: workflow-manager
+    to: domain-modeling
+    status: RESOLVED
+  - from: workflow-manager
+    to: wayfinder
+    status: RESOLVED
+  - from: workflow-manager
+    to: retro
+    status: RESOLVED
   - from: retro
     to: writing-for-agents
     status: RESOLVED
