@@ -1,0 +1,40 @@
+version: "1.0"
+edges:
+  - from: workflow-manager
+    to: unlazy
+    status: RESOLVED
+  - from: workflow-manager
+    to: grilling
+    status: RESOLVED
+  - from: workflow-manager
+    to: domain-modeling
+    status: RESOLVED
+  - from: workflow-manager
+    to: wayfinder
+    status: RESOLVED
+  - from: workflow-manager
+    to: retro
+    status: RESOLVED
+  - from: retro
+    to: writing-for-agents
+    status: RESOLVED
+  - from: wayfinder
+    to: grilling
+    status: RESOLVED
+  - from: wayfinder
+    to: domain-modeling
+    status: RESOLVED
+  - from: wayfinder
+    to: research
+    status: RESOLVED
+  - from: wayfinder
+    to: prototype
+    status: RESOLVED
+  - from: wayfinder
+    to: setup-matt-pocock-skills
+    status: RESOLVED
+external:
+  - name: issue-tracker
+    status: CONFIGURATION_REQUIRED
+  - name: background-agent
+    status: RUNTIME_REQUIRED

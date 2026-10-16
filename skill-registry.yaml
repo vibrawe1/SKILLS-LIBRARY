@@ -1,0 +1,100 @@
+version: "1.0"
+repository: "vibrawe1/SKILLS-LIBRARY"
+source_policy: "Recovered locally from multiple installed skill packages; imported with provenance."
+skills:
+  - name: workflow-manager
+    path: skills/workflow-manager/SKILL.md
+    status: PRESENT
+    role: core-orchestration
+    invocation: runtime-policy-dependent
+    dependencies:
+      files:
+        - skills/workflow-manager/references/authority-and-approvals.md
+        - skills/workflow-manager/references/checkpoints-and-recovery.md
+        - skills/workflow-manager/references/correction-cycles.md
+        - skills/workflow-manager/references/publication-gates.md
+        - skills/workflow-manager/references/regression-scenarios.md
+        - skills/workflow-manager/references/role-routing.md
+        - skills/workflow-manager/references/traceability-matrix.md
+        - skills/workflow-manager/references/workflow-state.md
+  - name: unlazy
+    path: skills/unlazy/SKILL.md
+    status: PRESENT
+    role: verification-control
+    invocation: explicit-or-governed
+    dependencies: []
+  - name: grilling
+    path: skills/grilling/SKILL.md
+    status: PRESENT
+    role: project-execution
+    invocation: runtime-policy-dependent
+    dependencies: []
+  - name: domain-modeling
+    path: skills/domain-modeling/SKILL.md
+    status: PRESENT
+    role: project-execution
+    invocation: runtime-policy-dependent
+    dependencies:
+      files:
+        - skills/domain-modeling/CONTEXT-FORMAT.md
+        - skills/domain-modeling/ADR-FORMAT.md
+  - name: research
+    path: skills/research/SKILL.md
+    status: PRESENT
+    role: project-execution
+    invocation: runtime-policy-dependent
+    dependencies:
+      runtime:
+        - background-agent
+  - name: prototype
+    path: skills/prototype/SKILL.md
+    status: PRESENT
+    role: project-execution
+    invocation: runtime-policy-dependent
+    dependencies:
+      files:
+        - skills/prototype/LOGIC.md
+        - skills/prototype/UI.md
+  - name: retro
+    path: skills/retro/SKILL.md
+    status: PRESENT
+    role: continuous-improvement
+    invocation: explicit
+    dependencies:
+      skills:
+        - writing-for-agents
+  - name: setup-matt-pocock-skills
+    path: skills/setup-matt-pocock-skills/SKILL.md
+    status: PRESENT
+    role: library-governance
+    invocation: explicit-and-approval-gated
+    dependencies:
+      files:
+        - skills/setup-matt-pocock-skills/domain.md
+        - skills/setup-matt-pocock-skills/issue-tracker-github.md
+        - skills/setup-matt-pocock-skills/issue-tracker-gitlab.md
+        - skills/setup-matt-pocock-skills/issue-tracker-local.md
+        - skills/setup-matt-pocock-skills/triage-labels.md
+        - skills/setup-matt-pocock-skills/CONNECTOR-ADAPTER.md
+  - name: wayfinder
+    path: skills/wayfinder/SKILL.md
+    status: PRESENT
+    role: project-execution
+    invocation: runtime-policy-dependent
+    dependencies:
+      skills:
+        - grilling
+        - domain-modeling
+        - research
+        - prototype
+        - setup-matt-pocock-skills
+      external:
+        - issue-tracker
+  - name: writing-for-agents
+    path: skills/writing-for-agents/SKILL.md
+    status: PRESENT
+    role: library-governance
+    invocation: runtime-policy-dependent
+    dependencies:
+      files:
+        - skills/writing-for-agents/SKILL-MECHANICS.md
