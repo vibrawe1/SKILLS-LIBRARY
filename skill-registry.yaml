@@ -5,12 +5,12 @@ skills:
   - name: grilling
     path: skills/grilling/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies: []
   - name: domain-modeling
     path: skills/domain-modeling/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies:
       files:
         - skills/domain-modeling/CONTEXT-FORMAT.md
@@ -18,14 +18,14 @@ skills:
   - name: research
     path: skills/research/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies:
       runtime:
         - background-agent
   - name: prototype
     path: skills/prototype/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies:
       files:
         - skills/prototype/LOGIC.md
@@ -40,7 +40,7 @@ skills:
   - name: setup-matt-pocock-skills
     path: skills/setup-matt-pocock-skills/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: explicit-and-approval-gated
     dependencies:
       files:
         - skills/setup-matt-pocock-skills/domain.md
@@ -48,10 +48,11 @@ skills:
         - skills/setup-matt-pocock-skills/issue-tracker-gitlab.md
         - skills/setup-matt-pocock-skills/issue-tracker-local.md
         - skills/setup-matt-pocock-skills/triage-labels.md
+        - skills/setup-matt-pocock-skills/CONNECTOR-ADAPTER.md
   - name: wayfinder
     path: skills/wayfinder/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies:
       skills:
         - grilling
@@ -64,7 +65,7 @@ skills:
   - name: writing-for-agents
     path: skills/writing-for-agents/SKILL.md
     status: PRESENT
-    invocation: explicit
+    invocation: runtime-policy-dependent
     dependencies:
       files:
         - skills/writing-for-agents/SKILL-MECHANICS.md
