@@ -1,0 +1,4 @@
+interface:
+  display_name: WORKFLOW-MANAGER
+  short_description: Coordinate governed multi-role book projects
+  default_prompt: Activate WORKFLOW-MANAGER for this project. Establish the project type with the user, route only the necessary roles, preserve canon and provenance, use checkpoints, and report every gate as PASS, FAIL, BLOCKED, or UNVERIFIED.
