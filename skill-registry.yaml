@@ -1,0 +1,70 @@
+version: "1.0"
+repository: "vibrawe1/SKILLS-LIBRARY"
+source_policy: "Recovered locally from mattpocock-skills 1.2.3; imported with provenance."
+skills:
+  - name: grilling
+    path: skills/grilling/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies: []
+  - name: domain-modeling
+    path: skills/domain-modeling/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      files:
+        - skills/domain-modeling/CONTEXT-FORMAT.md
+        - skills/domain-modeling/ADR-FORMAT.md
+  - name: research
+    path: skills/research/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      runtime:
+        - background-agent
+  - name: prototype
+    path: skills/prototype/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      files:
+        - skills/prototype/LOGIC.md
+        - skills/prototype/UI.md
+  - name: retro
+    path: skills/retro/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      skills:
+        - writing-for-agents
+  - name: setup-matt-pocock-skills
+    path: skills/setup-matt-pocock-skills/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      files:
+        - skills/setup-matt-pocock-skills/domain.md
+        - skills/setup-matt-pocock-skills/issue-tracker-github.md
+        - skills/setup-matt-pocock-skills/issue-tracker-gitlab.md
+        - skills/setup-matt-pocock-skills/issue-tracker-local.md
+        - skills/setup-matt-pocock-skills/triage-labels.md
+  - name: wayfinder
+    path: skills/wayfinder/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      skills:
+        - grilling
+        - domain-modeling
+        - research
+        - prototype
+        - setup-matt-pocock-skills
+      external:
+        - issue-tracker
+  - name: writing-for-agents
+    path: skills/writing-for-agents/SKILL.md
+    status: PRESENT
+    invocation: explicit
+    dependencies:
+      files:
+        - skills/writing-for-agents/SKILL-MECHANICS.md
